@@ -1,0 +1,20 @@
+/*=============================*/
+/* ROOT */
+/*=============================*/
+:root {
+  --color-white: #fff;
+  --color-black: #2d3436;
+  /*header*/
+  --header-height: 70px;
+}
+/*media*/
+@media(max-width: 1199px){
+  :root {
+    --header-height: 60px;
+  }
+}
+@media(max-width: 767px){
+  :root {
+    --header-height: 50px;
+  }
+}
