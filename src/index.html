@@ -1,24 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-    @@include('html/main/head.html', { 'title': 'Home Page' })
+    @@include('html/main/head.html', { 'title': 'Adverster | Home Page' })
 
     <body>
         <div class="content-block">
-            <!-- Header -->
-            @@include('html/main/header.html')
-
-            <!-- Loader -->
             @@include('html/other/loader.html')
 
             <main class="main">
-
-                <!-- Banner Section -->
-                @@include('html/sections/banner.html')
-
+                @@include('html/sections/step_one.html')
+                @@include('html/sections/step_two.html')
+                @@include('html/sections/step_three.html')
             </main>
-
-            <!-- Footer -->
-            @@include('html/main/footer.html')
         </div>
     </body>
 
