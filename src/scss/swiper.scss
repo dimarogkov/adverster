@@ -1,0 +1,44 @@
+/*=============================*/
+/* SWIPER */
+/*=============================*/
+.swiper {
+    position: relative;
+
+    &-wrapper {
+        position: relative;
+    }
+
+    &-container {
+        overflow: hidden;
+    }
+
+    &-slide {
+        position: relative;
+        background-size: cover;
+        background-position: center center;
+        backface-visibility: hidden;
+    }
+
+    &-button-prev,
+    &-button-next {
+        position: absolute;
+        z-index: 2;
+        top: auto;
+        left: 0;
+        bottom: auto;
+        right: auto;
+        width: auto;
+        height: auto;
+        background-image: none;
+        margin: 0;
+
+        &::after {
+            display: none;
+        }
+    }
+
+    &-button-next {
+        left: auto;
+        right: 0;
+    }
+}

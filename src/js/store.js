@@ -1,10 +1,8 @@
 export const store = {
-    main: {
-        header: document.querySelector('.header'),
-        body: document.body,
-    },
     sections: {
-        banner: document.querySelector('.banner'),
+        stepOne: document.querySelector('.step--one'),
+        stepTwo: document.querySelector('.step--two'),
+        stepThree: document.querySelector('.step--three'),
     },
     state: {
         isMenuOpen: false,

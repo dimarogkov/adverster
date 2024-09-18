@@ -1,1 +1,357 @@
+@import 'media';
 
+/*=============================*/
+/* STEP */
+/*=============================*/
+.step {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+
+    @include mobileBig {
+        height: 100%;
+    }
+
+    &--active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &--one {
+        .step__decor {
+            &:first-child {
+                left: 70px;
+                bottom: -5px;
+                width: 27%;
+
+                @include tabletBig {
+                    left: 40px;
+                    width: 45%;
+                }
+
+                @include mobileBig {
+                    display: none;
+                }
+            }
+
+            &:last-child {
+                right: 22px;
+                bottom: -5px;
+                width: 35%;
+
+                @include tabletBig {
+                    right: 16px;
+                    width: 60%;
+                }
+
+                @include mobileBig {
+                    left: -13%;
+                    width: 90%;
+                }
+            }
+        }
+
+        .container {
+            max-width: 1160px;
+        }
+
+        .step__cont {
+            margin-bottom: 80px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            @include tabletBig {
+                margin-bottom: 40px;
+            }
+
+            @include mobileBig {
+                margin-bottom: 0;
+            }
+        }
+
+        .label {
+            margin-bottom: 20px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            @include mobileBig {
+                width: 78%;
+                margin-bottom: 10px;
+            }
+        }
+
+        .title {
+            margin-bottom: 40px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            @include tabletBig {
+                margin-bottom: 32px;
+            }
+
+            @include mobileBig {
+                margin-bottom: 24px;
+            }
+
+            @include mobile {
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    &--two {
+        .step__block {
+            @include mobileBig {
+                justify-content: space-between;
+            }
+        }
+
+        .title {
+            margin-bottom: 44px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            @include deskSmall {
+                margin-bottom: 32px;
+            }
+
+            @include mobileBig {
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    &--three {
+        .step__decor {
+            &:first-child {
+                left: 40px;
+                bottom: -5px;
+                width: 27%;
+
+                @include tabletBig {
+                    left: 16px;
+                    width: 36%;
+                }
+
+                @include mobileBig {
+                    left: 36px;
+                    bottom: -10px;
+                    width: 78%;
+                }
+            }
+
+            &:last-child {
+                right: 28px;
+                bottom: -5px;
+                width: 29%;
+
+                @include tabletBig {
+                    right: 16px;
+                    width: 40%;
+                }
+
+                @include mobileBig {
+                    display: none;
+                }
+            }
+        }
+
+        .container {
+            max-width: 786px;
+        }
+
+        .step__cont {
+            margin-bottom: 120px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            @include tabletBig {
+                margin-bottom: 40px;
+            }
+
+            @include mobileBig {
+                margin-bottom: 0;
+            }
+        }
+
+        .title {
+            margin-bottom: 40px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            @include tabletBig {
+                margin-bottom: 20px;
+            }
+
+            @include mobileBig {
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    &__decors {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__decor {
+        position: absolute;
+    }
+
+    .container {
+        @include mobileBig {
+            height: 100%;
+        }
+    }
+
+    &__block {
+        position: relative;
+        width: 100%;
+
+        @include mobileBig {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            height: 100%;
+        }
+    }
+
+    &__cont {
+        position: relative;
+        width: 100%;
+
+        @include mobileBig {
+            flex: 1;
+        }
+    }
+
+    &__btns {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        width: 100%;
+
+        @include tabletBig {
+            gap: 32px;
+        }
+
+        @include mobileBig {
+            flex-direction: column-reverse;
+            gap: 10px;
+        }
+    }
+
+    &__swiper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 56px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        @include deskSmall {
+            margin-bottom: 32px;
+        }
+
+        @include mobileBig {
+            margin-bottom: 20px;
+        }
+
+        .swiper {
+            max-width: 464px;
+
+            @include deskSmall {
+                max-width: 400px;
+            }
+
+            @include mobileBig {
+                max-width: 68%;
+            }
+        }
+    }
+
+    &__arrows {
+        position: absolute;
+        width: 100%;
+    }
+
+    &__slide {
+        position: relative;
+        text-align: center;
+        width: 100%;
+        border-radius: 20px;
+        padding: 40px 70px;
+        border: 2px solid var(--color-white);
+        overflow: hidden;
+
+        &::before {
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(10px);
+        }
+
+        @include deskSmall {
+            padding: 32px;
+        }
+
+        @include tabletBig {
+            padding: 24px;
+        }
+
+        @include mobileBig {
+            padding: 20px;
+        }
+    }
+
+    &__imgs {
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-bottom: 117%;
+        border-radius: 20px;
+        margin-bottom: 10px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+}

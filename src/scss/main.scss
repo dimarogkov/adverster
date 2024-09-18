@@ -3,6 +3,7 @@
 @import 'root';
 @import 'reset';
 @import 'loader';
+@import 'swiper';
 
 /*=============================*/
 /* GLOBAL SETTINGS */
@@ -11,6 +12,8 @@ html {
     height: 100%;
 
     main {
+        display: flex;
+        align-items: center;
         flex: 1;
         background-image: url('./../img/bg.jpg');
         background-size: cover;
@@ -49,15 +52,15 @@ body {
     position: relative;
     width: 100%;
     max-width: 1370px;
-    padding: 0 30px;
+    padding: 30px;
     margin: 0 auto;
 
     @include tabletBig {
-        padding: 0 20px;
+        padding: 20px;
     }
 
     @include mobileSmall {
-        padding: 0 15px;
+        padding: 20px 15px;
     }
 }
 
@@ -203,7 +206,7 @@ input[type='number'] {
         }
 
         @include mobileBig {
-            font-size: 20px;
+            font-size: 18px;
         }
     }
 }
@@ -233,16 +236,22 @@ h1,
     }
 }
 
+h2,
+.h2 {
+    font-size: 84px;
+
+    @include tabletBig {
+        font-size: 48px;
+    }
+
+    @include mobileBig {
+        font-size: 24px;
+    }
+}
+
 h3,
 .h3 {
     font-size: 64px;
-}
-
-h2,
-.h2,
-h3,
-.h3 {
-    font-size: 84px;
 
     @include tabletBig {
         font-size: 48px;
@@ -289,6 +298,10 @@ h3,
         height: 70px;
     }
 
+    @include tabletSmall {
+        min-width: 250px;
+    }
+
     @include mobileBig {
         width: 100%;
         min-width: auto;
@@ -317,6 +330,7 @@ h3,
         font-size: 32px;
         font-weight: 700;
         color: var(--color-white);
+        text-transform: uppercase;
         transition: all 0.3s;
 
         @include tabletBig {
@@ -330,7 +344,8 @@ h3,
 }
 
 .arrow-btn {
-    position: relative;
+    position: absolute;
+    left: 0;
     display: flex;
     align-items: center;
 
@@ -353,6 +368,8 @@ h3,
     }
 
     &__right {
+        left: auto;
+        right: 0;
         transform: rotate(180deg);
     }
 
@@ -396,7 +413,10 @@ h3,
 }
 
 .sound-btn {
-    position: relative;
+    position: fixed;
+    z-index: 1;
+    top: 48px;
+    right: 74px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -418,6 +438,30 @@ h3,
         }
     }
 
+    @include deskBig {
+        right: 48px;
+    }
+
+    @include deskSmall {
+        top: 32px;
+        right: 32px;
+    }
+
+    @include tabletBig {
+        width: 40px;
+        height: 40px;
+    }
+
+    @include tabletSmall {
+        top: 12px;
+        right: 12px;
+    }
+
+    @include mobileBig {
+        width: 30px;
+        height: 30px;
+    }
+
     &__line {
         position: absolute;
         width: calc(100% + 12px);
@@ -435,5 +479,13 @@ h3,
         width: 32px;
         stroke-width: 1px;
         stroke: var(--color-white);
+
+        @include tabletBig {
+            width: 24px;
+        }
+
+        @include mobileBig {
+            width: 18px;
+        }
     }
 }
