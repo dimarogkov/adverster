@@ -13,16 +13,9 @@ import {store} from './store.js';
 // =============================
 const initSound = () => {
     const soundBtn = document.querySelector('.sound-btn');
-    const sound = new Audio('../audio/given-up.mp3');
-
-    const toggleSound = () => {
-        soundBtn.classList.toggle('sound-btn--stop');
-
-        !soundBtn.classList.contains('sound-btn--stop') ? sound.play() : sound.pause();
-    };
+    const toggleSound = () => soundBtn.classList.toggle('sound-btn--stop');
 
     soundBtn.addEventListener('click', toggleSound);
-    sound.play();
 };
 
 // =============================
