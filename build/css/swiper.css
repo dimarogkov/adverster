@@ -1,0 +1,38 @@
+/*=============================*/
+/* SWIPER */
+/*=============================*/
+.swiper {
+  position: relative;
+}
+.swiper-wrapper {
+  position: relative;
+}
+.swiper-container {
+  overflow: hidden;
+}
+.swiper-slide {
+  position: relative;
+  background-size: cover;
+  background-position: center center;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+.swiper-button-prev, .swiper-button-next {
+  position: absolute;
+  z-index: 2;
+  top: auto;
+  left: 0;
+  bottom: auto;
+  right: auto;
+  width: auto;
+  height: auto;
+  background-image: none;
+  margin: 0;
+}
+.swiper-button-prev::after, .swiper-button-next::after {
+  display: none;
+}
+.swiper-button-next {
+  left: auto;
+  right: 0;
+}
