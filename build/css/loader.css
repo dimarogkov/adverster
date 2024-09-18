@@ -9,30 +9,9 @@
   height: 100%;
   z-index: 999;
   background-color: var(--color-white);
-  -webkit-animation: loader 1.2s linear;
-          animation: loader 1.2s linear;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-
-@-webkit-keyframes loader {
-  0% {
-    opacity: 1;
-  }
-  70% {
-    opacity: 1;
-  }
-  99% {
-    opacity: 0;
-  }
-  100% {
-    display: none;
-    visibility: hidden;
-    z-index: -10;
-    opacity: 0;
-  }
+  animation: loader 1.2s linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 @keyframes loader {
