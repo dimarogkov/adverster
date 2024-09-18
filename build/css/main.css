@@ -147,7 +147,7 @@ html {
   height: 100%;
 }
 .no-webp html main{
-  background-image: url("../img/bg.jpg"); }
+  background-image: url("img/bg.jpg"); }
 html main {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -714,4 +714,4 @@ h3,
     width: 18px;
   }
 }
-.webp html main{ background-image: url(../img/bg.webp); }
+.webp html main{ background-image: url(img/bg.webp); }
