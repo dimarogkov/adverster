@@ -7,15 +7,53 @@
 
 // STORE
 import {store} from './store.js';
-const {sections, state} = store;
+
+// =============================
+// SOUND
+// =============================
+const initSound = () => {
+    const soundBtn = document.querySelector('.sound-btn');
+    const sound = new Audio('../audio/given-up.mp3');
+
+    const toggleSound = () => {
+        soundBtn.classList.toggle('sound-btn--stop');
+
+        !soundBtn.classList.contains('sound-btn--stop') ? sound.play() : sound.pause();
+    };
+
+    soundBtn.addEventListener('click', toggleSound);
+    sound.play();
+};
+
+// =============================
+// STEPS
+// =============================
+const initSteps = () => {
+    const nextStepBtns = document.querySelectorAll('.js-next-step-btn');
+
+    const changeStep = (nextStep) => {
+        store.steps.forEach((step) => {
+            const stepNumber = step.dataset.step;
+
+            stepNumber === nextStep
+                ? step.classList.add('step--active')
+                : step.classList.remove('step--active');
+        });
+    };
+
+    nextStepBtns.forEach((btn) => {
+        btn.addEventListener('click', ({target}) => changeStep(target.dataset.nextStep));
+    });
+};
 
 // =============================
 // SWIPER
 // =============================
 const initSwiper = () => {
-    const swiperBlock = sections.stepTwo.querySelector('.swiper');
-    const swiperBtnPrev = sections.stepTwo.querySelector('.swiper-button-prev');
-    const swiperBtnNext = sections.stepTwo.querySelector('.swiper-button-next');
+    const secondStep = [...store.steps].find((step) => step.classList.contains('step--two'));
+    const swiperBlock = secondStep.querySelector('.swiper');
+    const swiperBtnPrev = secondStep.querySelector('.swiper-button-prev');
+    const swiperBtnNext = secondStep.querySelector('.swiper-button-next');
 
     const swiperOptions = {
         slidesPerView: 1,
@@ -32,8 +70,12 @@ const initSwiper = () => {
     new Swiper(swiperBlock, swiperOptions);
 };
 
+// =============================
+// INIT PAGE
+// =============================
 const initPage = () => {
-    console.log(sections.steps);
+    initSound();
+    initSteps();
     initSwiper();
 };
 
